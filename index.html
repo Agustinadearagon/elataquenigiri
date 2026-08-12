@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>El Ataque Nigiri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- INICIO -->
+    <div id="pantalla-inicio" class="pantalla">
+        <div class="container">
+            <h1 class="titulo">EL ATAQUE<br>NIGIRI</h1>
+            <p class="subtitulo">¡Cómetelos todos!</p>
+            <img src="cara.jpg" alt="Jugadora" class="cara-preview">
+            <div class="instrucciones">
+                <h2>Cómo jugar</h2>
+                <ol>
+                    <li>Los nigiris caen del cielo.</li>
+                    <li>Muévete tocando izquierda o derecha.</li>
+                    <li>Cómete los nigiris con la boca.</li>
+                    <li>Si se te escapan demasiados, pierdes.</li>
+                </ol>
+            </div>
+            <button id="btn-empezar" class="btn-principal">¡A COMER!</button>
+            <p class="record-txt">Récord: <span id="record-inicio">0</span></p>
+        </div>
+    </div>
+
+    <!-- DIFICULTAD -->
+    <div id="pantalla-dificultad" class="pantalla oculta">
+        <div class="container">
+            <h1 class="titulo" style="font-size:1.8rem;">¿Cuánta hambre?</h1>
+            <div class="opciones">
+                <button id="btn-facil" class="btn-dif">
+                    <span class="modo-t">POCA HAMBRE</span>
+                    <span class="modo-d">Nigiris lentos · 5 vidas</span>
+                </button>
+                <button id="btn-normal" class="btn-dif">
+                    <span class="modo-t">HAMBRE NORMAL</span>
+                    <span class="modo-d">Velocidad media · 3 vidas</span>
+                </button>
+                <button id="btn-dificil" class="btn-dif btn-hot">
+                    <span class="modo-t">MUY HAMBRIENTA</span>
+                    <span class="modo-d">Lluvia intensa · 3 vidas</span>
+                </button>
+            </div>
+            <button id="btn-volver" class="btn-sec">← Volver</button>
+        </div>
+    </div>
+
+    <!-- JUEGO -->
+    <div id="pantalla-juego" class="pantalla oculta">
+        <div id="hud">
+            <span>🍣 <span id="puntos">0</span></span>
+            <span>❤️ <span id="vidas">3</span></span>
+            <span>🏆 <span id="record">0</span></span>
+        </div>
+        <canvas id="canvas"></canvas>
+        <div id="overlay-fin" class="oculta">
+            <p id="mensaje-fin"></p>
+            <button id="btn-reiniciar" class="btn-principal">OTRA RONDA</button>
+            <button id="btn-menu" class="btn-sec">Menú principal</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("./sw.js").catch(() => {});
+        }
+    </script>
+</body>
+</html>

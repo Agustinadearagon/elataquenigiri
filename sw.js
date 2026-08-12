@@ -1,4 +1,4 @@
-const CACHE_NAME = "nigiri-v4";
+const CACHE_NAME = "nigiri-v3";
 const FILES = ["./", "./index.html", "./script.js", "./style.css", "./cara.jpg", "./sw.js"];
 
 self.addEventListener("install", e => {
